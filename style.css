@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #a8c5d1 0%, #e8f0f3 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.rain-animation {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(to bottom, #b8d4dd 0%, #d4e5eb 100%);
+  overflow: hidden;
+}
+
+.rain {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.6));
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+      transform: translateY(300px);
+  }
+}
+
+.weather-info {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #4a5568;
+}
+
+.date {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.temperature {
+  font-size: 60px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.day-info {
+  text-align: center;
+  padding: 30px;
+  background: white;
+}
+
+.day-name {
+  font-size: 28px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 5px;
+}
+
+.condition {
+  font-size: 16px;
+  color: #718096;
+}
+
+.forecast {
+  background: white;
+  padding: 30px;
+  border-top: 3px solid #3b82f6;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.nav button {
+  background: none;
+  border: none;
+  color: #4a5568;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.nav button:hover {
+  background: #f7fafc;
+}
+
+.hourly {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.hour-card {
+  min-width: 100px;
+  padding: 20px 15px;
+  background: #f7fafc;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.hour-card.active {
+  background: #ffd700;
+  transform: scale(1.1);
+}
+
+.hour-card:hover {
+  transform: translateY(-5px);
+}
+
+.hour-time {
+  font-size: 14px;
+  color: #4a5568;
+  margin-bottom: 10px;
+}
+
+.hour-icon {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.hour-temp {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.search-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.search-box input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  outline: none;
+  width: 200px;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #4a5568;
+}

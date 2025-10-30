@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="rain-animation" id="rainContainer">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search location..." />
+            </div>
+            <div class="weather-info">
+                <div class="date" id="dateDisplay">Loading...</div>
+                <div class="location" id="locationDisplay">--</div>
+                <div class="temperature" id="tempDisplay">--°C</div>
+            </div>
+        </div>
+        <div class="day-info">
+            <div class="day-name" id="dayName">--</div>
+            <div class="condition" id="condition">--</div>
+        </div>
+        <div class="forecast">
+            <div class="nav">
+                <button onclick="changeDay(-1)">‹ Yesterday</button>
+                <span>Today</span>
+                <button onclick="changeDay(1)">Tomorrow ›</button>
+            </div>
+            <div class="hourly" id="hourlyForecast">
+                <div class="loading">Loading forecast...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
