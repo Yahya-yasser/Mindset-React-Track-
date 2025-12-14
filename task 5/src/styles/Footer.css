@@ -1,0 +1,36 @@
+.footer {
+  background: linear-gradient(135deg, #e8f0f8 0%, #f0e8f8 100%);
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.footer-link {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  margin: 0 0.5rem;
+}
+
+.footer-link:hover {
+  color: #2c5aa0;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
+  }
+}

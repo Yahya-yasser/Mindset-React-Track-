@@ -1,0 +1,109 @@
+.info-card {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.info-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #60d5a8 0%, #43b996 100%);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.info-value {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+.edit-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.info-edit-input {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.edit-actions button {
+  margin-left: 0.4rem;
+}
+
+.edit-toggle {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: transparent;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-save {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+
+.btn-cancel {
+  background: #eee;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .info-card {
+    padding: 1.5rem;
+    gap: 0.8rem;
+  }
+
+  .info-value {
+    font-size: 1.1rem;
+  }
+}

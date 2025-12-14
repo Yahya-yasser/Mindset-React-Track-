@@ -1,0 +1,23 @@
+.header {
+  background: white;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fingerprint-icon {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .fingerprint-icon {
+    font-size: 1.5rem;
+  }
+}
