@@ -1,0 +1,272 @@
+.app-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.branding {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 0.9;
+  text-align: left;
+  user-select: none;
+}
+
+.branding-line {
+  display: block;
+}
+
+.branding-line:nth-child(1) {
+  color: var(--yellow);
+}
+
+.branding-line:nth-child(2) {
+  color: var(--cyan);
+}
+
+.branding-line:nth-child(3) {
+  color: var(--yellow);
+}
+
+.game-container {
+  background: var(--purple-medium);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+}
+
+.score-container {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.score-box {
+  flex: 1;
+  padding: 16px 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.score-box.player-x {
+  background-color: var(--cyan);
+  color: var(--purple-dark);
+}
+
+.score-box.draw {
+  background-color: var(--white);
+  color: var(--purple-dark);
+}
+
+.score-box.player-o {
+  background-color: var(--yellow);
+  color: var(--purple-dark);
+}
+
+.score-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.score-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  background-color: var(--purple-cell);
+  border-radius: 12px;
+  border: none;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.cell:not(:disabled):hover {
+  background-color: var(--purple-light);
+  transform: scale(1.05);
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+}
+
+.cell.x {
+  color: var(--cyan);
+}
+
+.cell.o {
+  color: var(--yellow);
+}
+
+.turn-indicator {
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.turn-indicator.x-turn {
+  background-color: var(--cyan);
+  color: var(--purple-dark);
+}
+
+.turn-indicator.o-turn {
+  background-color: var(--yellow);
+  color: var(--purple-dark);
+}
+
+.game-over-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--green);
+  color: var(--purple-dark);
+  padding: 16px 48px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.game-over-banner::before,
+.game-over-banner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.game-over-banner::before {
+  left: -20px;
+  transform: translateY(-50%);
+  border-width: 25px 20px 25px 0;
+  border-color: transparent var(--green) transparent transparent;
+}
+
+.game-over-banner::after {
+  right: -20px;
+  transform: translateY(-50%);
+  border-width: 25px 0 25px 20px;
+  border-color: transparent transparent transparent var(--green);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.btn {
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.btn-new-game {
+  background-color: var(--white);
+  color: var(--purple-dark);
+}
+
+.btn-new-game:hover {
+  background-color: var(--gray);
+  transform: translateY(-2px);
+}
+
+.btn-reset {
+  background-color: var(--purple-light);
+  color: var(--white);
+}
+
+.btn-reset:hover {
+  background-color: var(--purple-cell);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .branding {
+    font-size: 2.5rem;
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .game-container {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .cell {
+    font-size: 2rem;
+  }
+
+  .game-over-banner {
+    font-size: 1rem;
+    padding: 12px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .branding {
+    font-size: 1.8rem;
+  }
+
+  .game-container {
+    padding: 16px;
+  }
+
+  .score-label {
+    font-size: 0.65rem;
+  }
+
+  .score-value {
+    font-size: 1.2rem;
+  }
+
+  .cell {
+    font-size: 1.5rem;
+  }
+}
