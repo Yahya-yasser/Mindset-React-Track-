@@ -1,0 +1,70 @@
+:root{
+  --bg:#0f0f10;
+  --panel:#1d1d1f;
+  --muted:#9aa0a6;
+  --accent:#6472ff;
+  --accent-2:#7b6bff;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg,#0b0b0c 0%, #111111 100%);
+  color:#e6e6e6;
+}
+.header{
+  padding:40px 0 10px;
+  text-align:center;
+}
+.logo{display:flex; justify-content:center; align-items:center;}
+.logo-img{height:56px; width:auto; display:block}
+.container{
+  width:820px;
+  margin:20px auto;
+  padding:20px;
+}
+.todo-input{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:20px;
+}
+.todo-input input{
+  flex:1;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.04);
+  padding:18px 16px;
+  border-radius:8px;
+  color:#e6e6e6;
+  outline:none;
+  font-size:15px;
+}
+.todo-input input::placeholder{color:var(--muted)}
+.add-btn{
+  background:var(--accent);
+  border:none;
+  color:white;
+  padding:12px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+}
+.meta{display:flex; justify-content:space-between; align-items:center; margin:12px 0 18px}
+.label{color:var(--muted); font-weight:600}
+.badge{background:rgba(255,255,255,0.04); padding:4px 8px; margin-left:8px; border-radius:999px; font-size:13px}
+.meta-right .done{color:#9c84ff}
+.todo-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px}
+.todo-item{
+  display:flex; align-items:flex-start; gap:14px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.03); padding:18px; border-radius:10px;
+}
+.todo-item .check{width:28px; height:28px; border-radius:999px; border:2px solid rgba(255,255,255,0.06); background:transparent; color:transparent; display:inline-flex; align-items:center; justify-content:center; cursor:pointer}
+.todo-item .check.checked{background:linear-gradient(180deg,var(--accent),var(--accent-2)); color:white; border:none}
+.todo-item .text{flex:1; color:#dcdcdc; line-height:1.5}
+.todo-item.done .text{text-decoration:line-through; color:rgba(255,255,255,0.5)}
+.todo-item .del{background:transparent; border:none; color:var(--muted); cursor:pointer}
+.empty{color:var(--muted); text-align:center; padding:20px}
+
+@media (max-width:900px){
+  .container{width:92%;}
+}
